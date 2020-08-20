@@ -1,0 +1,184 @@
+@mixin initial-value($property, $support-ie11: false) {
+  @if $property == appearance {
+    appearance: initial;
+
+    @if $support-ie11 {
+      appearance: none;
+    }
+  }
+
+  @else if $property == background {
+    background: initial;
+
+    @if $support-ie11 {
+      background: none;
+    }
+  }
+
+  @else if $property == border {
+    border: initial;
+
+    @if $support-ie11 {
+      border: none;
+    }
+  }
+
+  @else if $property == border-radius {
+    border-radius: initial;
+
+    @if $support-ie11 {
+      border-radius: 0;
+    }
+  }
+
+  @else if $property == color {
+    color: initial;
+
+    @if $support-ie11 {
+      color: inherit;
+    }
+  }
+
+  @else if $property == font-family {
+    font-family: initial;
+
+    @if $support-ie11 {
+      font-family: inherit;
+    }
+  }
+
+  @else if $property == font-size {
+    font-size: initial;
+
+    @if $support-ie11 {
+      font-size: 100%;// as 'meidum'
+    }
+  }
+
+  @else if $property == font-style {
+    font-style: initial;
+
+    @if $support-ie11 {
+      font-style: normal;
+    }
+  }
+
+  @else if $property == font-weight {
+    font-weight: initial;
+
+    @if $support-ie11 {
+      font-weight: normal;
+    }
+  }
+
+  @else if $property == list-style {
+    list-style: initial;
+
+    @if $support-ie11 {
+      list-style: none;
+    }
+  }
+
+  @else if $property == margin {
+    margin: initial;
+
+    @if $support-ie11 {
+      margin: 0;
+    }
+  }
+
+  @else if $property == padding {
+    padding: initial;
+
+    @if $support-ie11 {
+      padding: 0;
+    }
+  }
+
+  @else if $property == text-decoration {
+    text-decoration: initial;
+
+    @if $support-ie11 {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin ua-style($element, $support-ie11: false) {
+  @if $element == a {
+    @include initial-value(color, $support-ie11);
+    @include initial-value(text-decoration, $support-ie11);
+  }
+
+  @else if $element == b {
+    @include initial-value(font-weight, $support-ie11);
+  }
+
+  @else if $element == body {
+    @include initial-value(margin, $support-ie11);
+  }
+
+  @else if $element == button {
+    @include initial-value(appearance, $support-ie11);
+    @include initial-value(background, $support-ie11);
+    @include initial-value(border, $support-ie11);
+    @include initial-value(border-radius, $support-ie11);
+  }
+
+  @else if $element == code {
+    @include initial-value(font-size, $support-ie11);
+    @include initial-value(font-family, $support-ie11);
+  }
+
+  @else if $element == em {
+    @include initial-value(font-style, $support-ie11);
+    @include initial-value(font-weight, $support-ie11);
+  }
+
+  @else if $element == heading {
+    @include initial-value(margin, $support-ie11);
+    @include initial-value(font-weight, $support-ie11);
+  }
+
+  @else if $element == h1 {
+    @include ua-style(heading);
+  }
+
+  @else if $element == h2 {
+    @include ua-style(heading);
+  }
+
+  @else if $element == h3 {
+    @include ua-style(heading);
+  }
+
+  @else if $element == h4 {
+    @include ua-style(heading);
+  }
+
+  @else if $element == h5 {
+    @include ua-style(heading);
+  }
+
+  @else if $element == h6 {
+    @include ua-style(heading);
+  }
+
+  @else if $element == i {
+    @include initial-value(font-style, $support-ie11);
+  }
+
+  @else if $element == p {
+    @include initial-value(margin, $support-ie11);
+  }
+
+  @else if $element == pre {
+    @include initial-value(font-size, $support-ie11);
+  }
+
+  @else if $element == ul {
+    @include initial-value(margin, $support-ie11);
+    @include initial-value(padding, $support-ie11);
+    @include initial-value(list-style, $support-ie11);
+  }
+}

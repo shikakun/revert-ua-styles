@@ -1,0 +1,12 @@
+{
+  "name": "revert-ua-styles",
+  "version": "0.1.0",
+  "description": "Revert user agent stylesheet",
+  "main": "revert-ua-styles.scss",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shikakun/revert-ua-styles.git"
+  },
+  "author": "shikakun",
+  "license": "MIT"
+}
